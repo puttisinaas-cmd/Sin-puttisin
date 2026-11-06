@@ -1,0 +1,84 @@
+/* CV and biography, scoped to About so the existing portfolio keeps its layout. */
+#about.about{display:block;padding-block:60px 70px}
+#about .about-overview{display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,1.5fr);gap:clamp(36px,6vw,100px)}
+#about .about-name{font-size:clamp(46px,5vw,70px);line-height:1.1;letter-spacing:-.04em;margin-top:24px}
+#about .about-full-name{font-size:14px;line-height:1.7;margin-top:12px;color:var(--text)}
+#about .about-profession{font-size:12px;line-height:1.9;color:var(--muted);max-width:240px;margin-top:12px}
+#about .about-location{font-size:12px;line-height:1.9;color:var(--muted);max-width:260px;margin-top:22px}
+#about .about-copy{padding:0;max-width:690px;min-width:0}
+#about .about-story-title{font-size:clamp(25px,2.8vw,38px);font-weight:300;letter-spacing:-.015em;line-height:1.25;margin-bottom:26px}
+#about .about-copy>p{font-size:15px;line-height:1.9;letter-spacing:0;color:#c7c7c7}
+#about .about-copy>p+p{margin-top:20px}
+#about .about-copy>.about-lead{color:var(--text);font-size:18px;line-height:1.75}
+#about .about-copy a{color:var(--text);text-decoration:underline;text-decoration-color:#666;text-underline-offset:4px}
+#about .about-copy a:hover{text-decoration-color:#eee}
+#about .about-philosophy{border-left:1px solid #666;margin:30px 0 0;padding-left:24px}
+#about .about-philosophy p{font-size:20px;line-height:1.65;letter-spacing:-.01em;color:var(--text)}
+#about .about-approach{margin-top:48px;padding-top:26px;border-top:1px solid var(--line)}
+#about .about-subheading{font-size:11px;font-weight:400;letter-spacing:.13em;line-height:1.7;text-transform:uppercase}
+#about .approach-list{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:26px;margin:24px 0 0}
+#about .approach-list dt{font-size:14px;font-weight:400;line-height:1.6;margin-bottom:9px}
+#about .approach-list dd{font-size:13px;line-height:1.85;color:var(--muted);margin:0}
+#about .about-cv{margin-top:42px}
+#about .cv-panel{border-top:1px solid var(--line)}
+#about .cv-panel:last-child{border-bottom:1px solid var(--line)}
+#about .cv-panel>summary{display:flex;justify-content:space-between;align-items:center;gap:24px;cursor:pointer;list-style:none;min-height:78px;padding:20px 0}
+#about .cv-panel>summary::-webkit-details-marker{display:none}
+#about .cv-panel>summary::after{content:'+';font-size:24px;line-height:1;color:var(--muted)}
+#about .cv-panel[open]>summary::after{content:'−'}
+#about .cv-panel>summary:hover{color:#fff}
+#about .cv-panel>summary:focus-visible{outline:1px solid #eee;outline-offset:5px}
+#about .cv-panel-title{display:block;font-size:17px;line-height:1.6;font-weight:300;letter-spacing:.01em}
+#about .cv-panel-description{display:block;font-size:12px;line-height:1.7;color:var(--muted);margin-top:3px}
+#about .cv-content{padding:6px 0 32px}
+#about .experience-list,#about .publication-list{list-style:none;padding:0;margin:0}
+#about .experience-list>li{display:grid;grid-template-columns:minmax(180px,.8fr) minmax(0,1.5fr);gap:clamp(36px,6vw,100px);padding:22px 0;border-top:1px solid #272727}
+#about .experience-list h4{font-size:15px;font-weight:400;line-height:1.6}
+#about .cv-meta{font-size:12px;line-height:1.8;color:var(--muted);margin-top:5px}
+#about .experience-description{font-size:14px;line-height:1.9;color:#c7c7c7;max-width:690px}
+#about .experience-description p+p{margin-top:12px}
+#about .cv-participation{margin-top:24px}
+#about .cv-participation>.about-subheading{margin-bottom:16px}
+#about .cv-source{display:inline-block;font-size:12px;line-height:1.8;margin-top:12px;text-decoration:underline;text-underline-offset:4px;text-decoration-color:#666}
+#about .cv-source:hover{text-decoration-color:#eee}
+#about .publication-list>li+li{border-top:1px solid #272727}
+#about .publication-link{display:grid;grid-template-columns:165px minmax(0,1fr) 24px;gap:24px;align-items:start;padding:22px 0}
+#about .publication-name{font-size:17px;line-height:1.6;font-weight:300}
+#about .publication-year{display:block;font-size:11px;line-height:1.8;color:var(--muted);margin-top:4px}
+#about .publication-title{display:block;font-size:14px;line-height:1.8;color:var(--text)}
+#about .publication-credit{display:block;font-size:12px;line-height:1.8;color:var(--muted);margin-top:6px}
+#about .publication-arrow{font-size:18px;line-height:1.6;color:var(--muted);text-align:right}
+#about .publication-link:hover .publication-title{text-decoration:underline;text-decoration-color:#aaa;text-underline-offset:4px}
+#about .about-portfolio-link{margin-top:28px}
+@media(max-width:1100px){
+  #about .about-overview,#about .experience-list>li{grid-template-columns:minmax(180px,.7fr) minmax(0,1.5fr);gap:36px}
+  #about .approach-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 30px}
+}
+@media(max-width:767px){
+  #about.about{padding-block:38px 44px}
+  #about .about-overview{grid-template-columns:1fr;gap:32px}
+  #about .about-name{font-size:48px;margin-top:18px}
+  #about .about-profession,#about .about-location{max-width:360px}
+  #about .about-location{margin-top:14px}
+  #about .about-story-title{font-size:28px;margin-bottom:20px}
+  #about .about-copy>.about-lead{font-size:17px}
+  #about .about-copy>p{font-size:14px;line-height:1.9}
+  #about .about-philosophy{margin-top:24px;padding-left:18px}
+  #about .about-philosophy p{font-size:18px}
+  #about .about-approach{margin-top:34px;padding-top:22px}
+  #about .approach-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  #about .about-cv{margin-top:32px}
+  #about .cv-panel>summary{min-height:76px;gap:16px}
+  #about .cv-panel-title{font-size:16px}
+  #about .cv-panel-description{font-size:11px}
+  #about .experience-list>li{grid-template-columns:1fr;gap:12px;padding:20px 0}
+  #about .experience-description{font-size:13px}
+  #about .publication-link{grid-template-columns:minmax(0,1fr) 20px;gap:8px 16px;padding:20px 0}
+  #about .publication-name{grid-column:1;font-size:16px}
+  #about .publication-year{display:inline;margin-left:10px}
+  #about .publication-description{grid-column:1;grid-row:2}
+  #about .publication-title{font-size:13px}
+  #about .publication-credit{font-size:11px}
+  #about .publication-arrow{grid-column:2;grid-row:1}
+}
+@media(max-width:380px){#about .approach-list{grid-template-columns:1fr}}

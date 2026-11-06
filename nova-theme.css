@@ -1,0 +1,81 @@
+/* Nova Exhibitions measurements, adapted to the existing portfolio content.
+   Original styling and behavior remain in history/before-nova-2026-10-09. */
+@font-face{font-family:Roboto;src:url('./assets/roboto-latin.woff2') format('woff2');font-style:normal;font-weight:100 900;font-display:swap}
+@font-face{font-family:Artlogic;src:url('./assets/artlogic-social-icons.woff') format('woff');font-weight:normal;font-style:normal;font-display:block}
+:root{color-scheme:light;--bg:#fff;--text:#2f2f2f;--muted:#585858;--line:#ebebeb;--accent:#010101;font-family:Roboto,Arial,sans-serif;font-weight:300;scroll-padding-top:150px}
+body{font-size:14.1375px;line-height:30.225px}
+.wrap{width:calc(100% - 160px);max-width:none}
+.header-shell{position:sticky;top:0;z-index:20;background:#fff;transition:box-shadow .5s linear,transform .6s cubic-bezier(.65,.06,.19,.96),opacity .8s ease-in-out}
+.header-shell.is-hidden{transform:translateY(-100%)}
+.header-shell.is-scrolled{box-shadow:0 0 8px #0003}
+.header-shell:focus-within{transform:none}
+.header{height:120.328px;padding:28px 0 29px;border-bottom:1px solid var(--line)}
+.wordmark{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:#010101;font-size:56px;font-weight:200;letter-spacing:-2px;line-height:63.328px}
+.header nav{gap:26px;font-size:12.1875px;font-weight:300;letter-spacing:1.828px;line-height:17.55px}
+.header nav a{color:#585858;transition:color .3s ease}
+.header nav a:hover,.header nav a[aria-current]{color:#010101}
+.work{padding-top:60px}
+.section-heading{margin:0 0 49px;min-height:23px}
+.section-heading h1{font-size:20.475px;line-height:22.9125px;font-weight:300;letter-spacing:3.07px}
+.section-heading>.eyebrow{display:none}
+.archive-heading{border:0;padding:0;margin:0 0 54px;gap:12px;justify-content:flex-start}
+.archive-heading:after{content:'';height:1px;flex:1;background:var(--line)}
+.archive-heading h2{font-size:12.1875px;line-height:22px;letter-spacing:1.22px;color:#585858}
+.archive-heading>.eyebrow{display:none}
+.projects{grid-template-columns:repeat(3,minmax(0,1fr));gap:50px 40px;align-items:start}
+.projects .project-image{aspect-ratio:3/2;background:#f7f7f7}
+.project-image img{transition:opacity .4s ease-in-out;transform:none}
+.project:hover img{transform:none;opacity:.8}
+.projects .project-meta{padding-top:20px;min-height:105.7px}
+.project :is(h2,h3){font-size:16.0875px;line-height:19.5px;letter-spacing:2.413px;font-weight:300;color:#2f2f2f}
+.project-category{font-size:11.2125px;line-height:19.5px;letter-spacing:1.682px;color:#585858;margin-top:12px;font-weight:300}
+.project-meta .project-count{font-size:11.2125px;line-height:19.5px;letter-spacing:1.682px;color:#585858;display:block;margin-top:6px;text-transform:uppercase}
+.reveal-ready{opacity:0;transform:translate3d(0,100px,0);transition:transform 4s cubic-bezier(.18,1,.21,1),opacity 2.5s cubic-bezier(.18,1,.21,1)}
+.revealed{opacity:1;transform:none}
+.artist-statement{margin-top:35px;padding:45px 0;gap:25px}
+.artist-statement>div>p:first-child{font-size:17px;letter-spacing:.07em}
+.statement-detail,.eyebrow{color:#585858}
+.about{margin-top:40px;padding:50px 0 65px}
+.about-name{font-size:28px;line-height:1.4}
+.about-copy p{font-size:15px;line-height:1.8}
+.contact{padding:50px 0 65px}
+.contact-details{color:#585858;font-size:14px}
+.contact-details a:hover{color:#010101}
+.text-link{border-color:#bbb}
+.text-link:hover{border-color:#010101}
+.footer{font-size:11px;text-transform:uppercase;letter-spacing:1px;padding:25px 0 35px}
+a:focus-visible,button:focus-visible{outline:1px solid #333}
+.source-icon{font-family:Artlogic;font-weight:normal;font-style:normal;line-height:1}
+.menu-toggle{display:none}
+.menu-dialog{inset:0;width:100%;height:100dvh;max-width:none;max-height:none;border:0;margin:0;padding:0;background:transparent;color:#fff;overflow:hidden}
+.menu-dialog::backdrop{background:rgba(0,0,0,.91);backdrop-filter:none}
+.menu-dialog nav{height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;font-size:17.55px;line-height:35.1px;letter-spacing:2.632px;font-weight:300}
+.menu-dialog nav a{padding:0;opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.015,.85,.225,1),transform .9s cubic-bezier(.015,.85,.225,1);color:#aaa}
+.menu-dialog.is-visible nav a{opacity:1;transform:none}
+.menu-dialog nav a:hover,.menu-dialog nav a:focus{color:#fff}
+.menu-dialog nav a:nth-child(2){transition-delay:.08s}
+.menu-dialog nav a:nth-child(3){transition-delay:.16s}
+.menu-close{position:absolute;right:30px;top:20px;padding:10px;border:0;background:none;color:#888;font-size:22px}
+dialog:not(.menu-dialog){width:100vw;height:100dvh;max-height:none;max-width:none;border:0;padding:32px 80px;margin:0;background:#fff}
+dialog:not(.menu-dialog)::backdrop{background:#fff;backdrop-filter:none}
+.gallery-header h2{font-size:20.475px;text-transform:uppercase;letter-spacing:3px}
+.gallery-stage{background:#fff;height:calc(100dvh - 220px)}
+.gallery-stage button{background:#fffffff0;color:#585858;border:1px solid #ddd}
+.gallery-stage button:hover{background:#f5f5f5}
+.close{border-color:#ddd;color:#585858}
+.close:hover{border-color:#585858}
+.gallery-footer{font-size:13px;line-height:1.7}
+@media(max-width:1100px){.wrap{width:calc(100% - 80px)}.projects{gap:50px 30px}}
+@media(max-width:900px){.projects{grid-template-columns:repeat(2,minmax(0,1fr))}.header nav{gap:24px}.artist-statement{flex-direction:row}.work{padding-top:60px}}
+@media(max-width:767px){:root{scroll-padding-top:120px}.wrap{width:calc(100% - 30px)}.header{height:104.328px;padding:20px 0;border-bottom:1px solid var(--line)}.wordmark{font-size:52px}.header>nav{display:none}.menu-toggle{display:block;background:none;border:0;padding:10px 0 10px 10px;font-size:22px;color:#2f2f2f}.work{padding-top:30px}.section-heading{margin-bottom:33px;display:block;min-height:23px}.section-heading h1{font-size:17.55px;line-height:22.9125px;letter-spacing:2.632px}.archive-heading{margin-bottom:54px}.projects{grid-template-columns:1fr;gap:50px}.projects .project-image{aspect-ratio:3/2}.projects .project-meta{padding-top:20px;min-height:95.7px}.project :is(h2,h3){font-size:16.0875px;letter-spacing:2.413px}.project-category{font-size:11.2125px;letter-spacing:1.682px;margin-top:12px}.artist-statement{flex-direction:column;align-items:flex-start;margin-top:35px;padding:35px 0}.about,.contact{grid-template-columns:1fr;gap:25px}.about{margin-top:20px}.about-copy{padding-top:0}.footer{font-size:9px;letter-spacing:.5px}.footer a{font-size:10px}dialog:not(.menu-dialog){padding:20px 15px}.gallery-header h2{font-size:17.55px;letter-spacing:2px}.gallery-stage{height:calc(100dvh - 260px)}.gallery-footer{font-size:12px}.gallery-stage button{bottom:0}}
+@media(prefers-reduced-motion:reduce){.header-shell,.menu-dialog nav a{transition:none}.reveal-ready{opacity:1;transform:none}}
+/* Final alignment against the source's typography and metadata rhythm. */
+.header nav,.section-heading h1,.archive-heading h2,.project :is(h2,h3),.project-category,.project-meta .project-count{font-weight:200}
+.archive-heading{min-height:27.15px}
+.project-category{margin-top:15px;line-height:15.6px}
+.project-meta .project-count{margin-top:10px;line-height:15.6px}
+@media(max-width:767px){.projects .project-meta{min-height:95.7px}.project-category{margin-top:15px}}
+@media(max-width:767px){.archive-heading{min-height:22px}}
+.project:hover img{opacity:1}
+body:has(#mobile-menu[open]) .menu-toggle{visibility:hidden}
+.menu-close{right:20px}
